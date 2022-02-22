@@ -1,0 +1,60 @@
+
+name: Environments
+
+on:
+  push: 
+  pull_request:
+ 
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  dev-deployment:
+   
+    runs-on: ubuntu-latest
+    
+    environment: 
+      name: dev
+      url: https://dev.github.com
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, Dev!
+
+
+  qa-deployment:
+   
+    runs-on: ubuntu-latest
+    
+    environment: 
+      name: qa
+      url: https://qa.github.com
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, Dev!
+        
+jobs:
+  dev-deployment:
+   
+    runs-on: ubuntu-latest
+    
+    environment: 
+      name: dev
+      url: https://dev.github.com
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, Dev!
