@@ -43,7 +43,42 @@ jobs:
         run: echo Hello, QA!
         
 
-  prod-deployment:
+
+  prod-eu-deployment:
+    needs: [qa-deployment]
+    runs-on: ubuntu-latest
+    
+    environment: 
+      name: prod
+      url: https://prod.github.com
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, Prod!
+
+
+  prod-au-deployment:
+    needs: [qa-deployment]
+    runs-on: ubuntu-latest
+    
+    environment: 
+      name: prod
+      url: https://prod.github.com
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, Prod!
+        
+    
+  prod-us-deployment:
     needs: [qa-deployment]
     runs-on: ubuntu-latest
     
