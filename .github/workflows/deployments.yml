@@ -27,7 +27,7 @@ jobs:
 
 
   qa-deployment:
-   
+    needs: [dev-deployment]
     runs-on: ubuntu-latest
     
     environment: 
@@ -44,7 +44,7 @@ jobs:
         
 
   prod-deployment:
-   
+    needs: [qa-deployment]
     runs-on: ubuntu-latest
     
     environment: 
