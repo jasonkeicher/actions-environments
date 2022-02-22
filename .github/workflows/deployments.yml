@@ -40,16 +40,16 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Hello, Dev!
+        run: echo Hello, QA!
         
-jobs:
-  dev-deployment:
+
+  prod-deployment:
    
     runs-on: ubuntu-latest
     
     environment: 
-      name: dev
-      url: https://dev.github.com
+      name: prod
+      url: https://prod.github.com
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -57,4 +57,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Hello, Dev!
+        run: echo Hello, Prod!
